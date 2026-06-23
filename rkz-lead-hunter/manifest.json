@@ -1,0 +1,71 @@
+{
+  "manifest_version": 3,
+  "name": "RKZ Lead Hunter",
+  "version": "3.0",
+  "description": "Scrapes leads from Facebook, LinkedIn, Instagram, Reddit and Google Maps. Sends to local AI agent.",
+
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "storage",
+    "tabs",
+    "alarms"
+  ],
+
+  "host_permissions": [
+    "https://*.facebook.com/*",
+    "https://*.linkedin.com/*",
+    "https://*.instagram.com/*",
+    "https://*.reddit.com/*",
+    "https://www.google.com/maps/*",
+    "https://script.google.com/*",
+    "https://script.googleusercontent.com/*",
+    "https://*.ngrok-free.dev/*",
+    "https://*.ngrok-free.app/*",
+    "https://*.ngrok.io/*",
+    "http://localhost:8000/*",
+    "http://127.0.0.1:8000/*"
+  ],
+
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+
+  "action": {
+  "default_popup": "popup.html",
+  "default_icon": {
+    "16":  "icon.png",
+    "32":  "icon.png",
+    "48":  "icon.png",
+    "128": "icon.png"
+  }
+},
+"icons": {
+  "16":  "icon.png",
+  "32":  "icon.png",
+  "48":  "icon.png",
+  "128": "icon.png"
+},
+
+  "web_accessible_resources": [
+    {
+      "resources": ["dashboard.html"],
+      "matches": ["<all_urls>"]
+    }
+  ],
+
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*.facebook.com/*",
+        "https://*.linkedin.com/*",
+        "https://*.instagram.com/*",
+        "https://*.reddit.com/*",
+        "https://www.google.com/maps/*"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+# OS junk
+.DS_Store
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+aider-env*/
+
+# Runtime data — contains real lead info, NEVER commit
+rkz_leads.db
+*.db
+*.db-journal
+*.log
+failed_leads.json
+
+# Editor
+.vscode/
+.idea/
+
+# Screenshots / random images
+*.png
+*.jpg
+*.jpeg
+
+# aider session files (private)
+.aider*
+
+# Installer downloads
+Miniconda3-*.sh
+ngrok.zip
+
+# Local helper scripts (may contain secrets or local paths)
+start.sh
+run_agent.sh
+watch_ollama.sh
+
+# AI session notes
+CLAUDE.md

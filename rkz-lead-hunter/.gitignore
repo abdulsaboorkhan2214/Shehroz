@@ -1,0 +1,15 @@
+.aider*
+
+# OS junk
+.DS_Store
+
+# Runtime data — may contain real lead info, NEVER commit
+failed_leads.json
+*.log
+
+# AI session notes
+CLAUDE.md
+
+# Editor
+.vscode/
+.idea/
